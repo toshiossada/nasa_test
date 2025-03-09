@@ -21,32 +21,32 @@ class FavoritesDatasourceImpl implements FavoritesDatasource {
     _initDb();
   }
 
-  final _completer = Completer<Box>();
+  final completer = Completer<Box>();
 
   Future _initDb() async {
     final appDocDirectory = await getApplicationDocumentsDirectory();
     Hive.init(appDocDirectory.path);
 
     final box = await Hive.openBox('favorites');
-    if (!_completer.isCompleted) _completer.complete(box);
+    if (!completer.isCompleted) completer.complete(box);
   }
 
   @override
   Future<void> put(ApodModel data) async {
-    final box = await _completer.future;
+    final box = await completer.future;
     await box.put(data.date, data.toMap());
   }
 
   @override
   Future<void> remove(ApodModel data) async {
-    final box = await _completer.future;
+    final box = await completer.future;
     await box.delete(data.date);
   }
 
   @override
   Future<Set<ApodModel>> getAll() async {
     try {
-      final box = await _completer.future;
+      final box = await completer.future;
       final map = box.toMap().map(
         (k, e) => MapEntry(k.toString(), Map<String, dynamic>.from(e)),
       );
