@@ -1,0 +1,59 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Generate .env
+        run: |
+          touch .env
+          echo { >> .env
+          echo \"API_KEY\": \"${{ secrets.API_KEY }}\" >> .env
+          echo } >> .env
+          cat .env
+        working-directory: ./
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./
+
+      - name: Format code
+        run: dart format --set-exit-if-changed .
+        working-directory: ./
+
+      - name: Statically analyze
+        run: flutter analyze .
+        working-directory: ./
+
+      - name: Run Tests
+        run: flutter test
+        working-directory: ./
+
+      - name: Build apk.
+        run: flutter build apk --release --dart-define-from-file=.env
+        working-directory: ./
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: release-apk
+          path: /build/app/outputs/apk/release/app-release.apk
