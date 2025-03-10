@@ -53,7 +53,7 @@ jobs:
         working-directory: ./
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: release-apk
           path: /build/app/outputs/apk/release/app-release.apk

@@ -1,53 +1,83 @@
-# ARCHTECHTURE
+# Architecture Overview
 
-![archtecture](https://github.com/toshiossada/weather_test/assets/2637049/e336557f-ef0a-400b-a62d-64792e0fe984)
+This document outlines the architecture of the project, which is structured using Clean Architecture principles and a modular design.
 
-The `ARCHTECHTURE` is based on Clean Archtecture split on modules
+**Overall Architecture**
 
-![image](https://github.com/toshiossada/weather_test/assets/2637049/4b06aee9-a2d3-40f9-80f2-513a31eb5ded)
+![Architecture Diagram](https://github.com/toshiossada/weather_test/assets/2637049/e336557f-ef0a-400b-a62d-64792e0fe984)
 
-## CORE MODULE
+The architecture is divided into distinct modules to promote separation of concerns, maintainability, and testability.
 
-![image](https://github.com/toshiossada/weather_test/assets/2637049/5c7db08f-a201-41ca-aa69-3d55201dde3e)
+![Modular Architecture Diagram](https://github.com/toshiossada/weather_test/assets/2637049/4b06aee9-a2d3-40f9-80f2-513a31eb5ded)
 
-In `CORE MODULE` There are all features that will be shared across all modules, as Adapters, Extensions, Helpers, etc.
+## Core Module
 
-## HOME MODULE
+![Core Module Diagram](https://github.com/toshiossada/weather_test/assets/2637049/5c7db08f-a201-41ca-aa69-3d55201dde3e)
 
-At `HOME MODULE` there is a clean archtecture enviroment, as Domain (with usecases, entities, etc), Infra(with Datasource, Models, Repositories, etc) and Presentation (with Pages, Widgets, Stores, controles, etc).
+The `Core Module` contains reusable components that are shared across all other modules. This includes:
 
-![image]![image](https://github.com/user-attachments/assets/e6e7feb0-df74-4c75-8e97-f7701e86ccb1)
+* **Adapters:** Interfaces with external systems (e.g., HTTP clients).
+* **Extensions:** Utility functions extending existing classes or functionalities.
+* **Helpers:** Common utility functions and classes.
 
-### DOMAIN
+## Home Module
 
-![image](https://github.com/toshiossada/weather_test/assets/2637049/75987ec7-221e-412b-ba5a-baf2dd6d99e8)
+The `Home Module` demonstrates a Clean Architecture implementation, organized into the following layers:
 
-At `DOMAIN` layer we have enums, abstracts of repositories, entities and a use case.
+* **Domain:** Business logic and rules.
+* **Infrastructure (Infra):** Implementation details for external interactions.
+* **Presentation:** User interface and user interaction handling.
 
-### INFRA
+![Home Module Architecture Diagram](https://github.com/user-attachments/assets/33e689cb-b91d-4554-8722-58bed5bad93b)
 
-At `INFRA` Layer we have `DATASOURCES` and `REPOSITORIES`
+### Domain Layer
 
-#### DATASOURCE
+![Domain Layer Diagram](https://github.com/user-attachments/assets/2ebc0a92-a18f-4259-80ad-3dafc5970578)
 
-The `DATASOURCE` has responsability to call de `HttpAdapter` to Request DATA from API.
+The `Domain Layer` defines the core business logic and is independent of any specific implementation details. It includes:
+
+* **Enums:** Definitions of specific data types with limited values.
+* **Repository Interfaces:** Abstract definitions of data access operations.
+* **Entities:** Core data structures representing business objects.
+* **Use Cases:** Specific business operations or actions.
+
+### Infrastructure (Infra) Layer
+
+The `Infrastructure Layer` provides concrete implementations for the interfaces defined in the Domain Layer.
+
+#### Data Source
+
+![Data Source Diagram](https://github.com/user-attachments/assets/fd0e1d66-ed9a-47a1-a701-b18b30a0cc74)
+
+The `Data Source` is responsible for fetching data from external sources, such as APIs. It utilizes the `HttpAdapter` (from the Core Module) to make API requests.
 
 #### Repositories
 
-The `REPOSITORIES` has the responsibility  to make a bridge between `USECASE` and `DATASOURCE` and convert `MODELS` to `ENTITIES` using the `MAPPERS`
+![Repositories Diagram](https://github.com/user-attachments/assets/4d242f34-5cc0-4435-8c88-95344d8ed3fa)
 
-### PRESENTATION
+`Repositories` act as an intermediary between the `Use Cases` (in the Domain Layer) and the `Data Sources`. They are responsible for:
 
-![image](https://github.com/toshiossada/weather_test/assets/2637049/61c5da2c-a57b-4aba-bca8-231503bb5504)
+* Implementing the repository interfaces.
+* Retrieving data from the `Data Source`.
+* Converting data `Models` (from the Data Source) into `Entities` (from the Domain Layer) using `Mappers`.
 
-The `PRESENTATION` Layer is structured between Pages, Stores, Controllers and Widgets.
+### Presentation Layer
 
-The `Stores, Widgets and Controllers` outside the `Pages` folders that means the resource is shared across all presentations.
+![Presentation Layer Diagram](https://github.com/toshiossada/weather_test/assets/2637049/61c5da2c-a57b-4aba-bca8-231503bb5504)
 
-![image](https://github.com/toshiossada/weather_test/assets/2637049/673c197f-dfa3-4ea9-b8a2-4972ef2f55a1)
+The `Presentation Layer` is responsible for handling the user interface and user interactions. It is structured into:
 
-#### PAGES
+* **Pages:** Specific screens or views within the application.
+* **Stores:** State management components.
+* **Controllers:** Logic handlers for user interactions and data flow.
+* **Widgets:** Reusable UI components.
 
-Each Page should has a controller and could a store and one or more widgets.
+`Stores, Widgets, and Controllers` located outside of the `Pages` directory are designed to be reusable across multiple presentations.
 
-![image](https://github.com/toshiossada/weather_test/assets/2637049/593da6cd-740e-48be-bb91-1c39bf1a74da)
+![Shared Components Diagram](https://github.com/toshiossada/weather_test/assets/2637049/673c197f-dfa3-4ea9-b8a2-4972ef2f55a1)
+
+#### Pages
+
+![Page Structure Diagram](https://github.com/toshiossada/weather_test/assets/2637049/593da6cd-740e-48be-bb91-1c39bf1a74da)
+
+Each `Page` is typically associated with a `Controller` to manage its logic.  A page may also utilize a `Store` for state management and incorporate one or more `Widgets` for UI composition.
