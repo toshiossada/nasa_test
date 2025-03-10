@@ -27,6 +27,12 @@ jobs:
       - name: Exibir a versao instalada do Flutter
         run: flutter --version
 
+      - name: Clean
+        run: flutter clean
+
+      - name: Install dependencies
+        run: flutter pub get
+
       - name: Generate .env
         run: |
           touch .env
@@ -34,13 +40,9 @@ jobs:
           cat .env
 
       - name: List Files
-        run: ls
-
-      - name: Clean
-        run: flutter clean
-
-      - name: Install dependencies
-        run: flutter pub get
+        run: |
+          ls
+          cat .env
 
       - name: Run Build Runner
         run: dart run build_runner build -d
