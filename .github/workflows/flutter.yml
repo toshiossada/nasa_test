@@ -30,27 +30,21 @@ jobs:
           echo \"API_KEY\": \"${{ secrets.API_KEY }}\" >> .env
           echo } >> .env
           cat .env
-        working-directory: ./
 
       - name: Install dependencies
         run: flutter pub get
-        working-directory: ./
 
       - name: Format code
         run: dart format --set-exit-if-changed .
-        working-directory: ./
 
       - name: Statically analyze
         run: flutter analyze .
-        working-directory: ./
 
       - name: Run Tests
         run: flutter test
-        working-directory: ./
 
       - name: Build apk.
         run: flutter build apk --release --dart-define-from-file=.env
-        working-directory: ./
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
