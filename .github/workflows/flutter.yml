@@ -95,5 +95,4 @@ jobs:
 
       - name: Executar Build para iOS
         run: |
-          cd ${{ env.DIR_MOBILEAPP }}
           flutter build ios --simulator --debug
