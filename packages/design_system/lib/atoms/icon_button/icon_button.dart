@@ -57,7 +57,8 @@ class FIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FSemantics(
       identifier: super.key?.keyValue,
-      excludeSemantics: true,
+      button: true,
+      value: tooltip,
       child: IconButton(
         icon: icon,
         alignment: alignment,
@@ -70,7 +71,6 @@ class FIconButton extends StatelessWidget {
         highlightColor: highlightColor,
         splashColor: splashColor,
         disabledColor: disabledColor,
-        tooltip: tooltip,
         enableFeedback: enableFeedback,
         constraints: constraints,
         visualDensity: visualDensity,

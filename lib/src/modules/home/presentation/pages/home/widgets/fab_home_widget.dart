@@ -20,7 +20,11 @@ class FABHomeWiddget extends StatelessWidget {
     return switch (state) {
       FavoriteStateSave(favorites: final favorites) ||
       FavoriteStateSuccess(favorites: final favorites) => FloatingActionButton(
-        child: const FIcon(icon: Icons.star, color: Colors.yellow),
+        child: const FIcon(
+          key: Key('btnFavorites'),
+          icon: Icons.star,
+          color: Colors.yellow,
+        ),
         onPressed: () {
           Navigator.pushNamed(
             context,

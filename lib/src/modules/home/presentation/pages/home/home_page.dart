@@ -103,10 +103,16 @@ class _HomePageState extends State<HomePage> {
           builder: (_, homeState, _) {
             return Scaffold(
               appBar: AppBar(
+                title: const Text('Home'),
                 actions: [
                   FIconButton(
                     onPressed: () => _onFavoritePressed(favorites, homeState),
                     icon: FIcon(
+                      tooltip:
+                          isFavorite(favorites, homeState)
+                              ? 'desfavoritar'
+                              : 'favoritar',
+                      key: const Key('btnLike'),
                       icon: Icons.favorite,
                       color: _getIconFavoriteColor(favorites, homeState),
                     ),

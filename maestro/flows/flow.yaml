@@ -1,0 +1,19 @@
+appId: br.com.toshi.eclipse
+---
+- launchApp:
+        clearState: true
+- assertVisible: 'Imagem do dia'
+- assertVisible: "favoritar"
+- tapOn:
+    id: "btnLike"
+- tapOn:
+        id: 'next_day'
+- assertVisible: 'Ocorreu um erro: Invalid argument(s): A data não pode ser futura., Ocorreu um erro: Invalid argument(s): A data não pode ser futura.'
+- tapOn:
+        id: 'previous_day'
+- assertVisible: 'Imagem do dia'
+- tapOn:
+        id: 'previous_day'
+- assertVisible: 'Imagem do dia'
+- tapOn:
+    id: "btnFavorites"

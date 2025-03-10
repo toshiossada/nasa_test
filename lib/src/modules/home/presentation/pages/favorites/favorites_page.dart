@@ -39,6 +39,11 @@ class _FavoritesPageState extends State<FavoritesPage> {
                   title: FText(apod.brlDate),
                   subtitle: FText(apod.title),
                   trailing: FIconButton(
+                    tooltip:
+                        favorites.any((e) => e == apod)
+                            ? 'desfavoritar'
+                            : 'favoritar',
+                    key: Key('btnFavorite${apod.brlDate}'),
                     onPressed: () {
                       final isFavorite = favorites.any((e) => e == apod);
                       if (isFavorite) {

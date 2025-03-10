@@ -1,0 +1,4 @@
+appId: br.com.toshi.eclipse
+---
+# Requisita o processo de login
+- runFlow: flows/flow.yaml
