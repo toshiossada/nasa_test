@@ -1,4 +1,4 @@
-name: Flutter CI
+name: 'Flutter CI'
 
 on:
   push:
@@ -7,8 +7,11 @@ on:
     branches: [main]
 
 jobs:
-  android:
-    uses: ./flutter.yml
-  ios:
-    needs: android
-    uses: ./ios.yml
+  trigger-android-build:
+    name: Trigger Android Build
+    uses: ./.github/workflows/android_build.yml  # Chama o workflow android_build.yml
+
+  trigger-ios-build:
+    name: Trigger iOS Build
+    needs: trigger-android-build # Depende do trigger-android-build
+    uses: ./.github/workflows/ios_build.yml      # Chama o workflow ios_build.yml
