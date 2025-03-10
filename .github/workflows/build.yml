@@ -1,0 +1,14 @@
+name: Workflow Principal
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  android:
+    uses: ./.github/workflows/flutter.yml
+  ios:
+    needs: android
+    uses: ./.github/workflows/flutter.yml
