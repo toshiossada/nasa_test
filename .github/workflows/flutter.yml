@@ -31,6 +31,8 @@ jobs:
         run: |
           touch .env
           echo API_KEY:${{ secrets.API_KEY }} >> .env
+          ls
+          pwd
           cat .env
 
       - name: Clean
