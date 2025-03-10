@@ -1,4 +1,4 @@
-# Project Name NASA APOD
+# NASA APOD
 
 ![nasa](https://github.com/user-attachments/assets/50183e03-cf65-4075-be7c-ce0625ead770)
 
