@@ -2,7 +2,7 @@
 
 This document outlines the architecture of the project, which is structured using Clean Architecture principles and a modular design.
 
-**Overall Architecture**
+## **Overall Architecture**
 
 ![Architecture Diagram](https://github.com/toshiossada/weather_test/assets/2637049/e336557f-ef0a-400b-a62d-64792e0fe984)
 
