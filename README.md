@@ -60,11 +60,11 @@ This guide describes how to execute integration tests using Maestro to verify ap
 > Prerequisites
 
 1 -  **Maestro Installed:**
-    * Ensure Maestro is correctly installed. Follow the detailed instructions at [https://docs.maestro.dev/getting-started/installing-maestro](https://docs.maestro.dev/getting-started/installing-maestro).
+    *Ensure Maestro is correctly installed. Follow the detailed instructions at [https://docs.maestro.dev/getting-started/installing-maestro](https://docs.maestro.dev/getting-started/installing-maestro).
     * Verify that Maestro is accessible in your PATH by running `maestro --version` in the terminal.
 
 2 -  **Configured Android Environment:**
-    * Have the Android SDK and command-line tools (adb) configured on your system.
+    *Have the Android SDK and command-line tools (adb) configured on your system.
     * An Android emulator or a physical device connected and configured for USB debugging.
 
 3 -  **Flutter SDK Installed:**
@@ -75,27 +75,22 @@ This guide describes how to execute integration tests using Maestro to verify ap
 1 -  **Building the Release APK:**
     * Execute the following command to build the release APK of your Flutter application:
 
-    ```bash
     flutter build apk --release
-    ```
 
-    * This command creates an optimized APK for production, located at `build/app/outputs/flutter-apk/app-release.apk`.
+* This command creates an optimized APK for production, located at `build/app/outputs/flutter-apk/app-release.apk`.
 
 2 -  **Installing the APK on the Device/Emulator:**
     * Install the APK on your Android device or emulator using adb:
 
-    ```bash
     adb install build/app/outputs/flutter-apk/app-release.apk
-    ```
 
-    * If you are reinstalling the application, you may need to use the command `adb install -r build/app/outputs/flutter-apk/app-release.apk` to reinstall over the existing version.
+* If you are reinstalling the application, you may need to use the command `adb install -r build/app/outputs/flutter-apk/app-release.apk` to reinstall over the existing version.
 
-3. -  **Executing Maestro Tests:**
+1 - **Executing Maestro Tests:**
     * Execute the integration tests defined in the `maestro/flows.yaml` file with the following command:
 
-    ```bash
     maestro test maestro/flows.yaml
-    ```
+
 
     * Maestro will execute the steps defined in `flows.yaml` on the connected device/emulator, simulating user interaction and verifying application behavior.
 
