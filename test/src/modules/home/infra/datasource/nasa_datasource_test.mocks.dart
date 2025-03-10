@@ -26,13 +26,8 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeHttpResponse_0 extends _i1.SmartFake implements _i2.HttpResponse {
-  _FakeHttpResponse_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
+  _FakeHttpResponse_0(Object parent, Invocation parentInvocation)
+    : super(parent, parentInvocation);
 }
 
 /// A class which mocks [IHttpClientAdapter].
@@ -47,38 +42,33 @@ class MockIHttpClientAdapter extends _i1.Mock
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #get,
-          [path],
-          {
-            #queryParameters: queryParameters,
-            #headers: headers,
-          },
-        ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #get,
-            [path],
-            {
-              #queryParameters: queryParameters,
-              #headers: headers,
-            },
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #get,
-            [path],
-            {
-              #queryParameters: queryParameters,
-              #headers: headers,
-            },
-          ),
-        )),
-      ) as _i4.Future<_i2.HttpResponse>);
+            Invocation.method(
+              #get,
+              [path],
+              {#queryParameters: queryParameters, #headers: headers},
+            ),
+            returnValue: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #get,
+                  [path],
+                  {#queryParameters: queryParameters, #headers: headers},
+                ),
+              ),
+            ),
+            returnValueForMissingStub: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #get,
+                  [path],
+                  {#queryParameters: queryParameters, #headers: headers},
+                ),
+              ),
+            ),
+          )
+          as _i4.Future<_i2.HttpResponse>);
 
   @override
   _i4.Future<_i2.HttpResponse> post(
@@ -88,41 +78,45 @@ class MockIHttpClientAdapter extends _i1.Mock
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #post,
-          [path],
-          {
-            #data: data,
-            #queryParameters: queryParameters,
-            #headers: headers,
-          },
-        ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #post,
-            [path],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #headers: headers,
-            },
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #post,
-            [path],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #headers: headers,
-            },
-          ),
-        )),
-      ) as _i4.Future<_i2.HttpResponse>);
+            Invocation.method(
+              #post,
+              [path],
+              {
+                #data: data,
+                #queryParameters: queryParameters,
+                #headers: headers,
+              },
+            ),
+            returnValue: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #post,
+                  [path],
+                  {
+                    #data: data,
+                    #queryParameters: queryParameters,
+                    #headers: headers,
+                  },
+                ),
+              ),
+            ),
+            returnValueForMissingStub: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #post,
+                  [path],
+                  {
+                    #data: data,
+                    #queryParameters: queryParameters,
+                    #headers: headers,
+                  },
+                ),
+              ),
+            ),
+          )
+          as _i4.Future<_i2.HttpResponse>);
 
   @override
   _i4.Future<_i2.HttpResponse> put(
@@ -134,47 +128,51 @@ class MockIHttpClientAdapter extends _i1.Mock
     String? cancelationIdentification,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #put,
-          [path],
-          {
-            #data: data,
-            #queryParameters: queryParameters,
-            #headers: headers,
-            #contentType: contentType,
-            #cancelationIdentification: cancelationIdentification,
-          },
-        ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #put,
-            [path],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #headers: headers,
-              #contentType: contentType,
-              #cancelationIdentification: cancelationIdentification,
-            },
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #put,
-            [path],
-            {
-              #data: data,
-              #queryParameters: queryParameters,
-              #headers: headers,
-              #contentType: contentType,
-              #cancelationIdentification: cancelationIdentification,
-            },
-          ),
-        )),
-      ) as _i4.Future<_i2.HttpResponse>);
+            Invocation.method(
+              #put,
+              [path],
+              {
+                #data: data,
+                #queryParameters: queryParameters,
+                #headers: headers,
+                #contentType: contentType,
+                #cancelationIdentification: cancelationIdentification,
+              },
+            ),
+            returnValue: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #put,
+                  [path],
+                  {
+                    #data: data,
+                    #queryParameters: queryParameters,
+                    #headers: headers,
+                    #contentType: contentType,
+                    #cancelationIdentification: cancelationIdentification,
+                  },
+                ),
+              ),
+            ),
+            returnValueForMissingStub: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #put,
+                  [path],
+                  {
+                    #data: data,
+                    #queryParameters: queryParameters,
+                    #headers: headers,
+                    #contentType: contentType,
+                    #cancelationIdentification: cancelationIdentification,
+                  },
+                ),
+              ),
+            ),
+          )
+          as _i4.Future<_i2.HttpResponse>);
 
   @override
   _i4.Future<_i2.HttpResponse> delete(
@@ -183,36 +181,31 @@ class MockIHttpClientAdapter extends _i1.Mock
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #delete,
-          [path],
-          {
-            #queryParameters: queryParameters,
-            #headers: headers,
-          },
-        ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #delete,
-            [path],
-            {
-              #queryParameters: queryParameters,
-              #headers: headers,
-            },
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
-          this,
-          Invocation.method(
-            #delete,
-            [path],
-            {
-              #queryParameters: queryParameters,
-              #headers: headers,
-            },
-          ),
-        )),
-      ) as _i4.Future<_i2.HttpResponse>);
+            Invocation.method(
+              #delete,
+              [path],
+              {#queryParameters: queryParameters, #headers: headers},
+            ),
+            returnValue: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #delete,
+                  [path],
+                  {#queryParameters: queryParameters, #headers: headers},
+                ),
+              ),
+            ),
+            returnValueForMissingStub: _i4.Future<_i2.HttpResponse>.value(
+              _FakeHttpResponse_0(
+                this,
+                Invocation.method(
+                  #delete,
+                  [path],
+                  {#queryParameters: queryParameters, #headers: headers},
+                ),
+              ),
+            ),
+          )
+          as _i4.Future<_i2.HttpResponse>);
 }

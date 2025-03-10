@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,10 +48,6 @@ jobs:
       - name: Run Tests
         run: flutter test
 
-      - name: Executar Build para iOS
-        run: |
-          flutter build ios --simulator --debug
-
       - name: Build apk.
         run: flutter build apk --release
 
@@ -60,8 +56,3 @@ jobs:
         with:
           name: release-apk
           path: /build/app/outputs/flutter-apk/app-release.apk
-      - name: Upload Artifact
-        uses: actions/upload-artifact@main
-        with:
-          name: release-apk
-          path: /build/app/outputs/flutter-ios/app-release.ipa
