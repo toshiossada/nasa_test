@@ -30,10 +30,11 @@ jobs:
       - name: Generate .env
         run: |
           touch .env
-          echo API_KEY:${{ secrets.API_KEY }} >> .env
-          ls
-          pwd
+          echo "API_KEY:${{ secrets.API_KEY }}">> .env
           cat .env
+
+      - name: List Files
+        run: ls
 
       - name: Clean
         run: flutter clean
