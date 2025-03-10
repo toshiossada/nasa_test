@@ -8,7 +8,7 @@ on:
 
 jobs:
   android:
-    uses: ./.github/workflows/flutter.yml
+    uses: ./flutter.yml
   ios:
     needs: android
-    uses: ./.github/workflows/ios.yml
+    uses: ./ios.yml
