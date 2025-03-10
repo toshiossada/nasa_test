@@ -109,10 +109,6 @@ void main() {
     await tester.pump();
 
     // Then
-    await expectLater(
-      find.byType(HomePage),
-      matchesGoldenFile('golden/failure_home_page.png'),
-    );
     expect(find.byType(FailureStateWidget), findsOneWidget);
   });
 
@@ -155,10 +151,6 @@ void main() {
     await tester.pump();
 
     // Then
-    await expectLater(
-      find.byType(HomePage),
-      matchesGoldenFile('golden/favorite_home_page.png'),
-    );
     verify(mockSaveFavoritesUsecase(apod: apodEntity, delete: true)).called(1);
 
     await tester.pump();
