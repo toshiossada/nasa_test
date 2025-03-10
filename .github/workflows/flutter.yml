@@ -50,7 +50,7 @@ jobs:
 
       - name: Executar Build para iOS
         run: |
-          flutter build ios --simulator --release
+          flutter build ios --simulator --debug
 
       - name: Build apk.
         run: flutter build apk --release
