@@ -49,25 +49,40 @@ class _MediaDisplayWidgetState extends State<MediaDisplayWidget> {
     return FSemantics(
       identifier: widget.key?.keyValue,
       label: widget.mediaType.label,
-      child: switch (widget.mediaType) {
-        MediaTypeEnum.image => InteractiveViewer(
-          minScale: 0.5,
-          maxScale: 4,
-          child: CachedNetworkImage(
-            imageUrl: widget.url,
-            placeholder: (context, url) => const FCircularProgressIndicator(),
-            errorWidget:
-                (context, url, error) => const FIcon(icon: Icons.error),
-          ),
+      child: SingleChildScrollView(
+        // Adicionado SingleChildScrollView
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return switch (widget.mediaType) {
+              MediaTypeEnum.image => ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: 300,
+                  maxHeight: constraints.maxHeight,
+                ),
+                child: InteractiveViewer(
+                  minScale: 0.5,
+                  maxScale: 4,
+                  child: CachedNetworkImage(
+                    imageUrl: widget.url,
+                    fit: BoxFit.contain, // Usando BoxFit.contain
+                    placeholder:
+                        (context, url) => const FCircularProgressIndicator(),
+                    errorWidget:
+                        (context, url, error) => const FIcon(icon: Icons.error),
+                  ),
+                ),
+              ),
+              MediaTypeEnum.video =>
+                _isVideoInitialized
+                    ? AspectRatio(
+                      aspectRatio: _controller.value.aspectRatio,
+                      child: VideoPlayer(_controller),
+                    )
+                    : const FCircularProgressIndicator(),
+            };
+          },
         ),
-        MediaTypeEnum.video =>
-          _isVideoInitialized
-              ? AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              )
-              : const FCircularProgressIndicator(),
-      },
+      ),
     );
   }
 }
