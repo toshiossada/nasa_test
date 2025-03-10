@@ -2,50 +2,50 @@ name: 'Android Build'
 description: 'Building APK'
 runs:
   using: "composite"
-  steps:
-      - name: Checkout
+  steps:  # steps deve estar alinhado com 'using'
+    - name: Checkout
       uses: actions/checkout@v4
-  
-      - name: Setup Java
+
+    - name: Setup Java
       uses: actions/setup-java@v1
       with:
-          java-version: "17.x"
-  
-      - name: Setup Flutter
+        java-version: "17.x"
+
+    - name: Setup Flutter
       uses: subosito/flutter-action@v2.14.0
       with:
-          flutter-version: 3.29.0
-          channel: stable
-  
-      - name: Exibir a versao instalada do Flutter
+        flutter-version: 3.29.0
+        channel: stable
+
+    - name: Exibir a versao instalada do Flutter
       run: flutter --version
-  
-      - name: Clean
+
+    - name: Clean
       run: flutter clean
-  
-      - name: Install dependencies
+
+    - name: Install dependencies
       run: flutter pub get
-  
-      - name: Generate .env
+
+    - name: Generate .env
       run: |
-          touch .env
-          echo "API_KEY=${{secrets.API_KEY }}" >> .env
-          cat .env
-  
-      - name: Run Build Runner
+        touch .env
+        echo "API_KEY=${{secrets.API_KEY }}" >> .env
+        cat .env
+
+    - name: Run Build Runner
       run: dart run build_runner build -d
-  
-      - name: Statically analyze
+
+    - name: Statically analyze
       run: flutter analyze .
-  
-      - name: Run Tests
+
+    - name: Run Tests
       run: flutter test
-  
-      - name: Build apk.
+
+    - name: Build apk.
       run: flutter build apk --release
-  
-      - name: Upload Artifact
+
+    - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+        name: release-apk
+        path: build/app/outputs/flutter-apk/app-release.apk
