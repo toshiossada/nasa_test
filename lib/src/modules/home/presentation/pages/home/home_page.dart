@@ -12,8 +12,9 @@ import 'widgets/loading_state_widget.dart';
 import 'widgets/success_state_widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({required this.controller, super.key});
+  const HomePage({required this.controller, this.selectedDate, super.key});
   final HomeController controller;
+  final DateTime? selectedDate;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -21,7 +22,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   HomeController get controller => widget.controller;
-  DateTime selectedDate = DateTime.now();
+  late DateTime selectedDate = widget.selectedDate ?? DateTime.now();
 
   @override
   void initState() {
@@ -116,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   DateWidget(
-                    initialDate: DateTime.now(),
+                    initialDate: selectedDate,
                     onSelectDate: (DateTime selectedDate) {
                       controller.load(selectedDate);
                       this.selectedDate = selectedDate;

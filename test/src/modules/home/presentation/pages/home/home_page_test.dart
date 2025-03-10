@@ -64,6 +64,7 @@ void main() {
 
   testWidgets('Given a HomePage, '
       'When the home state is success, '
+      'When the home state is success, '
       'Then it should display the success state', (WidgetTester tester) async {
     // Given
     final apodEntity = ApodEntity(
@@ -98,7 +99,12 @@ void main() {
 
     // When
     await tester.pumpWidget(
-      makeTestableWidget(home: HomePage(controller: homeController)),
+      makeTestableWidget(
+        home: HomePage(
+          controller: homeController,
+          selectedDate: DateTime(2025, 3, 9),
+        ),
+      ),
     );
     await tester.pump();
 
@@ -137,7 +143,12 @@ void main() {
 
     // When
     await tester.pumpWidget(
-      makeTestableWidget(home: HomePage(controller: homeController)),
+      makeTestableWidget(
+        home: HomePage(
+          controller: homeController,
+          selectedDate: DateTime(2025, 3, 9),
+        ),
+      ),
     );
     await tester.pump();
     await tester.tap(find.byIcon(Icons.favorite));
