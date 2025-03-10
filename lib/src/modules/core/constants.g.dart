@@ -96,9 +96,11 @@ final class _Constants {
     540349598,
   ];
 
-  static final String apiKey = String.fromCharCodes(List<int>.generate(
-    _envieddataapiKey.length,
-    (int i) => i,
-    growable: false,
-  ).map((int i) => _envieddataapiKey[i] ^ _enviedkeyapiKey[i]));
+  static final String apiKey = String.fromCharCodes(
+    List<int>.generate(
+      _envieddataapiKey.length,
+      (int i) => i,
+      growable: false,
+    ).map((int i) => _envieddataapiKey[i] ^ _enviedkeyapiKey[i]),
+  );
 }

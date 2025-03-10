@@ -9,12 +9,13 @@ class NasaDatasourceImpl implements NasaDatasource {
 
   @override
   Future<ApodModel> getMediaOfDay(String date) async {
-    final request = await client.get('/planetary/apod', queryParameters: {'date': date});
-    
+    final request = await client.get(
+      '/planetary/apod',
+      queryParameters: {'date': date},
+    );
+
     final response = ApodModel.fromMap(request.data);
 
     return response;
   }
 }
-
-

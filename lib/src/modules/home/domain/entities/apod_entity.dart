@@ -23,7 +23,7 @@ class ApodEntity {
   String get brlDate {
     final date = DateTime.parse(this.date);
     final formattedDate = DateFormat('dd/MM/yyyy').format(date);
-    return formattedDate; 
+    return formattedDate;
   }
 
   @override

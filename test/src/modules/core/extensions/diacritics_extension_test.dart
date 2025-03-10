@@ -2,8 +2,7 @@ import 'package:eclipse/src/modules/core/extensions/diacritics_extension.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test(
-      'Given called withoutDiacriticalMarks '
+  test('Given called withoutDiacriticalMarks '
       'When value é João '
       'Should remove Diacritical marks and retoyrn Joao', () async {
     const value = 'João';
@@ -11,8 +10,7 @@ void main() {
     expect(value.withoutDiacriticalMarks, 'Joao');
   });
 
-  test(
-      'Given called withoutDiacriticalMarks '
+  test('Given called withoutDiacriticalMarks '
       'When value é JoÃo '
       'Should remove Diacritical marks and retoyrn JoAo', () async {
     const value = 'JoÃo';
@@ -20,8 +18,7 @@ void main() {
     expect(value.withoutDiacriticalMarks, 'JoAo');
   });
 
-  test(
-      'Given called withoutDiacriticalMarks '
+  test('Given called withoutDiacriticalMarks '
       'When value é São PÀúlô '
       'Should remove Diacritical marks and retoyrn Sao PAulo', () async {
     const value = 'São PÀúlô';
