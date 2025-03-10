@@ -1,4 +1,4 @@
-name: "Build Android"
+name: "Build IOS"
 
 on:
   workflow_call: # Altere o trigger para workflow_call
