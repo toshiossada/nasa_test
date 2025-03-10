@@ -26,8 +26,13 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeApodEntity_0 extends _i1.SmartFake implements _i2.ApodEntity {
-  _FakeApodEntity_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeApodEntity_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [NasaRepository].
@@ -35,52 +40,56 @@ class _FakeApodEntity_0 extends _i1.SmartFake implements _i2.ApodEntity {
 /// See the documentation for Mockito's code generation for more information.
 class MockNasaRepository extends _i1.Mock implements _i3.NasaRepository {
   @override
-  _i4.Future<_i2.ApodEntity> getMediaOfDay(String? date) =>
-      (super.noSuchMethod(
-            Invocation.method(#getMediaOfDay, [date]),
-            returnValue: _i4.Future<_i2.ApodEntity>.value(
-              _FakeApodEntity_0(
-                this,
-                Invocation.method(#getMediaOfDay, [date]),
-              ),
-            ),
-            returnValueForMissingStub: _i4.Future<_i2.ApodEntity>.value(
-              _FakeApodEntity_0(
-                this,
-                Invocation.method(#getMediaOfDay, [date]),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.ApodEntity>);
+  _i4.Future<_i2.ApodEntity> getMediaOfDay(String? date) => (super.noSuchMethod(
+        Invocation.method(
+          #getMediaOfDay,
+          [date],
+        ),
+        returnValue: _i4.Future<_i2.ApodEntity>.value(_FakeApodEntity_0(
+          this,
+          Invocation.method(
+            #getMediaOfDay,
+            [date],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.ApodEntity>.value(_FakeApodEntity_0(
+          this,
+          Invocation.method(
+            #getMediaOfDay,
+            [date],
+          ),
+        )),
+      ) as _i4.Future<_i2.ApodEntity>);
 
   @override
-  _i4.Future<Set<_i2.ApodEntity>> getFatorites() =>
-      (super.noSuchMethod(
-            Invocation.method(#getFatorites, []),
-            returnValue: _i4.Future<Set<_i2.ApodEntity>>.value(
-              <_i2.ApodEntity>{},
-            ),
-            returnValueForMissingStub: _i4.Future<Set<_i2.ApodEntity>>.value(
-              <_i2.ApodEntity>{},
-            ),
-          )
-          as _i4.Future<Set<_i2.ApodEntity>>);
+  _i4.Future<Set<_i2.ApodEntity>> getFatorites() => (super.noSuchMethod(
+        Invocation.method(
+          #getFatorites,
+          [],
+        ),
+        returnValue: _i4.Future<Set<_i2.ApodEntity>>.value(<_i2.ApodEntity>{}),
+        returnValueForMissingStub:
+            _i4.Future<Set<_i2.ApodEntity>>.value(<_i2.ApodEntity>{}),
+      ) as _i4.Future<Set<_i2.ApodEntity>>);
 
   @override
-  _i4.Future<void> addFavorites(_i2.ApodEntity? data) =>
-      (super.noSuchMethod(
-            Invocation.method(#addFavorites, [data]),
-            returnValue: _i4.Future<void>.value(),
-            returnValueForMissingStub: _i4.Future<void>.value(),
-          )
-          as _i4.Future<void>);
+  _i4.Future<void> addFavorites(_i2.ApodEntity? data) => (super.noSuchMethod(
+        Invocation.method(
+          #addFavorites,
+          [data],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i4.Future<void> removeFavorite(_i2.ApodEntity? data) =>
-      (super.noSuchMethod(
-            Invocation.method(#removeFavorite, [data]),
-            returnValue: _i4.Future<void>.value(),
-            returnValueForMissingStub: _i4.Future<void>.value(),
-          )
-          as _i4.Future<void>);
+  _i4.Future<void> removeFavorite(_i2.ApodEntity? data) => (super.noSuchMethod(
+        Invocation.method(
+          #removeFavorite,
+          [data],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }

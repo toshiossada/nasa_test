@@ -30,9 +30,7 @@ jobs:
       - name: Generate .env
         run: |
           touch .env
-          echo { >> .env
           echo \"API_KEY\": \"${{ secrets.API_KEY }}\" >> .env
-          echo } >> .env
           cat .env
 
       - name: Clean

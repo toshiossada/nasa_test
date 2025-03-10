@@ -33,13 +33,23 @@ import 'package:mockito/mockito.dart' as _i1;
 
 class _FakeNasaRepository_0 extends _i1.SmartFake
     implements _i2.NasaRepository {
-  _FakeNasaRepository_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeNasaRepository_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 class _FakeApodEntity_1 extends _i1.SmartFake implements _i3.ApodEntity {
-  _FakeApodEntity_1(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeApodEntity_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [GetFavoritesUsecase].
@@ -48,32 +58,28 @@ class _FakeApodEntity_1 extends _i1.SmartFake implements _i3.ApodEntity {
 class MockGetFavoritesUsecase extends _i1.Mock
     implements _i4.GetFavoritesUsecase {
   @override
-  _i2.NasaRepository get repository =>
-      (super.noSuchMethod(
-            Invocation.getter(#repository),
-            returnValue: _FakeNasaRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-            returnValueForMissingStub: _FakeNasaRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-          )
-          as _i2.NasaRepository);
+  _i2.NasaRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeNasaRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+        returnValueForMissingStub: _FakeNasaRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i2.NasaRepository);
 
   @override
-  _i5.Future<List<_i3.ApodEntity>> call() =>
-      (super.noSuchMethod(
-            Invocation.method(#call, []),
-            returnValue: _i5.Future<List<_i3.ApodEntity>>.value(
-              <_i3.ApodEntity>[],
-            ),
-            returnValueForMissingStub: _i5.Future<List<_i3.ApodEntity>>.value(
-              <_i3.ApodEntity>[],
-            ),
-          )
-          as _i5.Future<List<_i3.ApodEntity>>);
+  _i5.Future<List<_i3.ApodEntity>> call() => (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [],
+        ),
+        returnValue: _i5.Future<List<_i3.ApodEntity>>.value(<_i3.ApodEntity>[]),
+        returnValueForMissingStub:
+            _i5.Future<List<_i3.ApodEntity>>.value(<_i3.ApodEntity>[]),
+      ) as _i5.Future<List<_i3.ApodEntity>>);
 }
 
 /// A class which mocks [GetMediaOfDayUsecase].
@@ -82,32 +88,40 @@ class MockGetFavoritesUsecase extends _i1.Mock
 class MockGetMediaOfDayUsecase extends _i1.Mock
     implements _i6.GetMediaOfDayUsecase {
   @override
-  _i2.NasaRepository get repository =>
-      (super.noSuchMethod(
-            Invocation.getter(#repository),
-            returnValue: _FakeNasaRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-            returnValueForMissingStub: _FakeNasaRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-          )
-          as _i2.NasaRepository);
+  _i2.NasaRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeNasaRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+        returnValueForMissingStub: _FakeNasaRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i2.NasaRepository);
 
   @override
-  _i5.Future<_i3.ApodEntity> call(DateTime? date) =>
-      (super.noSuchMethod(
-            Invocation.method(#call, [date]),
-            returnValue: _i5.Future<_i3.ApodEntity>.value(
-              _FakeApodEntity_1(this, Invocation.method(#call, [date])),
-            ),
-            returnValueForMissingStub: _i5.Future<_i3.ApodEntity>.value(
-              _FakeApodEntity_1(this, Invocation.method(#call, [date])),
-            ),
-          )
-          as _i5.Future<_i3.ApodEntity>);
+  _i5.Future<_i3.ApodEntity> call(DateTime? date) => (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [date],
+        ),
+        returnValue: _i5.Future<_i3.ApodEntity>.value(_FakeApodEntity_1(
+          this,
+          Invocation.method(
+            #call,
+            [date],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.ApodEntity>.value(_FakeApodEntity_1(
+          this,
+          Invocation.method(
+            #call,
+            [date],
+          ),
+        )),
+      ) as _i5.Future<_i3.ApodEntity>);
 }
 
 /// A class which mocks [SaveFavoritesUsecase].
@@ -116,19 +130,17 @@ class MockGetMediaOfDayUsecase extends _i1.Mock
 class MockSaveFavoritesUsecase extends _i1.Mock
     implements _i7.SaveFavoritesUsecase {
   @override
-  _i2.NasaRepository get repository =>
-      (super.noSuchMethod(
-            Invocation.getter(#repository),
-            returnValue: _FakeNasaRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-            returnValueForMissingStub: _FakeNasaRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-          )
-          as _i2.NasaRepository);
+  _i2.NasaRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeNasaRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+        returnValueForMissingStub: _FakeNasaRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i2.NasaRepository);
 
   @override
   _i5.Future<void> call({
@@ -136,9 +148,15 @@ class MockSaveFavoritesUsecase extends _i1.Mock
     required bool? delete,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#call, [], {#apod: apod, #delete: delete}),
-            returnValue: _i5.Future<void>.value(),
-            returnValueForMissingStub: _i5.Future<void>.value(),
-          )
-          as _i5.Future<void>);
+        Invocation.method(
+          #call,
+          [],
+          {
+            #apod: apod,
+            #delete: delete,
+          },
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
 }

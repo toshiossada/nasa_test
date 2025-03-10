@@ -28,8 +28,13 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeApodModel_0 extends _i1.SmartFake implements _i2.ApodModel {
-  _FakeApodModel_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeApodModel_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [NasaDatasource].
@@ -37,17 +42,27 @@ class _FakeApodModel_0 extends _i1.SmartFake implements _i2.ApodModel {
 /// See the documentation for Mockito's code generation for more information.
 class MockNasaDatasource extends _i1.Mock implements _i3.NasaDatasource {
   @override
-  _i4.Future<_i2.ApodModel> getMediaOfDay(String? date) =>
-      (super.noSuchMethod(
-            Invocation.method(#getMediaOfDay, [date]),
-            returnValue: _i4.Future<_i2.ApodModel>.value(
-              _FakeApodModel_0(this, Invocation.method(#getMediaOfDay, [date])),
-            ),
-            returnValueForMissingStub: _i4.Future<_i2.ApodModel>.value(
-              _FakeApodModel_0(this, Invocation.method(#getMediaOfDay, [date])),
-            ),
-          )
-          as _i4.Future<_i2.ApodModel>);
+  _i4.Future<_i2.ApodModel> getMediaOfDay(String? date) => (super.noSuchMethod(
+        Invocation.method(
+          #getMediaOfDay,
+          [date],
+        ),
+        returnValue: _i4.Future<_i2.ApodModel>.value(_FakeApodModel_0(
+          this,
+          Invocation.method(
+            #getMediaOfDay,
+            [date],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.ApodModel>.value(_FakeApodModel_0(
+          this,
+          Invocation.method(
+            #getMediaOfDay,
+            [date],
+          ),
+        )),
+      ) as _i4.Future<_i2.ApodModel>);
 }
 
 /// A class which mocks [FavoritesDatasource].
@@ -56,33 +71,33 @@ class MockNasaDatasource extends _i1.Mock implements _i3.NasaDatasource {
 class MockFavoritesDatasource extends _i1.Mock
     implements _i5.FavoritesDatasource {
   @override
-  _i4.Future<Set<_i2.ApodModel>> getAll() =>
-      (super.noSuchMethod(
-            Invocation.method(#getAll, []),
-            returnValue: _i4.Future<Set<_i2.ApodModel>>.value(
-              <_i2.ApodModel>{},
-            ),
-            returnValueForMissingStub: _i4.Future<Set<_i2.ApodModel>>.value(
-              <_i2.ApodModel>{},
-            ),
-          )
-          as _i4.Future<Set<_i2.ApodModel>>);
+  _i4.Future<Set<_i2.ApodModel>> getAll() => (super.noSuchMethod(
+        Invocation.method(
+          #getAll,
+          [],
+        ),
+        returnValue: _i4.Future<Set<_i2.ApodModel>>.value(<_i2.ApodModel>{}),
+        returnValueForMissingStub:
+            _i4.Future<Set<_i2.ApodModel>>.value(<_i2.ApodModel>{}),
+      ) as _i4.Future<Set<_i2.ApodModel>>);
 
   @override
-  _i4.Future<void> put(_i2.ApodModel? data) =>
-      (super.noSuchMethod(
-            Invocation.method(#put, [data]),
-            returnValue: _i4.Future<void>.value(),
-            returnValueForMissingStub: _i4.Future<void>.value(),
-          )
-          as _i4.Future<void>);
+  _i4.Future<void> put(_i2.ApodModel? data) => (super.noSuchMethod(
+        Invocation.method(
+          #put,
+          [data],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i4.Future<void> remove(_i2.ApodModel? data) =>
-      (super.noSuchMethod(
-            Invocation.method(#remove, [data]),
-            returnValue: _i4.Future<void>.value(),
-            returnValueForMissingStub: _i4.Future<void>.value(),
-          )
-          as _i4.Future<void>);
+  _i4.Future<void> remove(_i2.ApodModel? data) => (super.noSuchMethod(
+        Invocation.method(
+          #remove,
+          [data],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }
