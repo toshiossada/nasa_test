@@ -1,4 +1,5 @@
 export '../atoms/align/align.dart';
+export '../atoms/badge/badge.dart';
 export '../atoms/center/center.dart';
 export '../atoms/circular_progress_indicator/circular_progress_indicator.dart';
 export '../atoms/colored_box/colored_box.dart';
