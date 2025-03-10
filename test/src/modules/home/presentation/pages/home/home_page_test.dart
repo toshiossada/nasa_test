@@ -1,7 +1,7 @@
 import 'package:eclipse/src/modules/core/errors.dart';
 import 'package:eclipse/src/modules/home/domain/entities/apod_entity.dart';
 import 'package:eclipse/src/modules/home/domain/usecases/get_favorites_usecase.dart';
-import 'package:eclipse/src/modules/home/domain/usecases/get_media_od_day_usecase.dart';
+import 'package:eclipse/src/modules/home/domain/usecases/get_media_of_day_usecase.dart';
 import 'package:eclipse/src/modules/home/domain/usecases/save_favorites_usecase.dart';
 import 'package:eclipse/src/modules/home/presentation/pages/home/home_controller.dart';
 import 'package:eclipse/src/modules/home/presentation/pages/home/home_page.dart';
@@ -17,6 +17,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../../../../../helpers/font_loader.dart';
+import '../../../../../../helpers/make_testable_widget.dart';
 import 'home_page_test.mocks.dart';
 
 @GenerateNiceMocks([
@@ -30,6 +32,8 @@ void main() {
   final mockSaveFavoritesUsecase = MockSaveFavoritesUsecase();
   late HomeStore homeStore;
   late HomeController homeController;
+
+  setUpAll(loadFonts.call);
 
   setUp(() {
     homeStore = HomeStore();
@@ -49,7 +53,7 @@ void main() {
 
     // When
     await tester.pumpWidget(
-      MaterialApp(home: HomePage(controller: homeController)),
+      makeTestableWidget(home: HomePage(controller: homeController)),
     );
 
     // Then
@@ -75,11 +79,12 @@ void main() {
 
     // When
     await tester.pumpWidget(
-      MaterialApp(home: HomePage(controller: homeController)),
+      makeTestableWidget(home: HomePage(controller: homeController)),
     );
     await tester.pump();
 
     // Then
+
     expect(find.byType(SuccessStateWidget), findsOneWidget);
   });
 
@@ -93,11 +98,15 @@ void main() {
 
     // When
     await tester.pumpWidget(
-      MaterialApp(home: HomePage(controller: homeController)),
+      makeTestableWidget(home: HomePage(controller: homeController)),
     );
     await tester.pump();
 
     // Then
+    await expectLater(
+      find.byType(HomePage),
+      matchesGoldenFile('golden/failure_home_page.png'),
+    );
     expect(find.byType(FailureStateWidget), findsOneWidget);
   });
 
@@ -128,13 +137,17 @@ void main() {
 
     // When
     await tester.pumpWidget(
-      MaterialApp(home: HomePage(controller: homeController)),
+      makeTestableWidget(home: HomePage(controller: homeController)),
     );
     await tester.pump();
     await tester.tap(find.byIcon(Icons.favorite));
     await tester.pump();
 
     // Then
+    await expectLater(
+      find.byType(HomePage),
+      matchesGoldenFile('golden/favorite_home_page.png'),
+    );
     verify(mockSaveFavoritesUsecase(apod: apodEntity, delete: true)).called(1);
 
     await tester.pump();

@@ -11,7 +11,7 @@ import 'package:eclipse/src/modules/home/domain/repositories/nasa_repository.dar
     as _i2;
 import 'package:eclipse/src/modules/home/domain/usecases/get_favorites_usecase.dart'
     as _i4;
-import 'package:eclipse/src/modules/home/domain/usecases/get_media_od_day_usecase.dart'
+import 'package:eclipse/src/modules/home/domain/usecases/get_media_of_day_usecase.dart'
     as _i6;
 import 'package:eclipse/src/modules/home/domain/usecases/save_favorites_usecase.dart'
     as _i7;

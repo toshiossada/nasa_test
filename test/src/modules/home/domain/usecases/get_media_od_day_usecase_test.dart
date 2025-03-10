@@ -1,7 +1,7 @@
 import 'package:eclipse/src/modules/home/domain/entities/apod_entity.dart';
 import 'package:eclipse/src/modules/home/domain/enums/media_type_enum.dart';
 import 'package:eclipse/src/modules/home/domain/repositories/nasa_repository.dart';
-import 'package:eclipse/src/modules/home/domain/usecases/get_media_od_day_usecase.dart';
+import 'package:eclipse/src/modules/home/domain/usecases/get_media_of_day_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 import 'package:mockito/annotations.dart';

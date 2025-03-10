@@ -5,7 +5,7 @@ import '../core/core_module.dart';
 import 'domain/entities/apod_entity.dart';
 import 'domain/repositories/nasa_repository.dart';
 import 'domain/usecases/get_favorites_usecase.dart';
-import 'domain/usecases/get_media_od_day_usecase.dart';
+import 'domain/usecases/get_media_of_day_usecase.dart';
 import 'domain/usecases/save_favorites_usecase.dart';
 import 'infra/datasource/favorites_datasource.dart';
 import 'infra/datasource/nasa_datasource.dart';

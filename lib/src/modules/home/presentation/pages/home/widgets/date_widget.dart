@@ -54,14 +54,16 @@ class _DateWidgetState extends State<DateWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         FIconButton(
+          key: const Key('previous_day'),
           icon: const Icon(Icons.arrow_back),
           onPressed: _goToPreviousDate,
         ),
-        ElevatedButton(
+        FElevatedButton(
           onPressed: () => _selectDate(context),
           child: FText(date),
         ),
-        IconButton(
+        FIconButton(
+          key: const Key('next_day'),
           icon: const Icon(Icons.arrow_forward),
           onPressed: _goToNextDate,
         ),
