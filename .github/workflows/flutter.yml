@@ -96,3 +96,9 @@ jobs:
       - name: Executar Build para iOS
         run: |
           flutter build ios --simulator --debug
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: release-ipa
+          path: build/ios/iphonesimulator/Runner.app
