@@ -3,7 +3,6 @@
 ![nasa](https://github.com/user-attachments/assets/50183e03-cf65-4075-be7c-ce0625ead770)
 
 This project is a Flutter application built using Clean Architecture and a modular design.
-https://dog-devourer-a69.notion.site/Flutter-15a3dbe33057802f98e1f732565b52b2
 
 ## Getting Started
 
