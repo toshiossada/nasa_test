@@ -3,6 +3,7 @@
 ![nasa](https://github.com/user-attachments/assets/50183e03-cf65-4075-be7c-ce0625ead770)
 
 This project is a Flutter application built using Clean Architecture and a modular design.
+https://dog-devourer-a69.notion.site/Flutter-15a3dbe33057802f98e1f732565b52b2
 
 ## Getting Started
 
@@ -29,14 +30,16 @@ This project is a Flutter application built using Clean Architecture and a modul
 
 To run the application:
 
-1 -  Create a `.env` file in the project root to store your environment variables as `.env_example`.
+1 - Register on <https://api.nasa.gov/> to get you API_KEY
+
+2 -  Create a `.env` file in the project root to store your environment variables as `.env_example`.
     API_KEY={API_KEY}
 
-2 -  Run the app `build_runner`:
+3 -  Run the app `build_runner`:
 
     flutter build_runner build
 
-3 -  Run the app:
+4 -  Run the app:
     flutter run
 
 ## Testing
